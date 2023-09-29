@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <div class="w-full flex items-center justify-center bg-blue-500 font-sans" style="height: 600px;">
+    <div class="w-full h-screen flex items-center justify-center bg-blue-500 font-sans">
       <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
         <div class="mb-4">
           <h1 class="text-4xl text-red">Todo App</h1>
@@ -52,6 +52,9 @@
         </div>
       </div>
     </div>
+    <footer class="bg-blue-700 text-center py-4 text-white">
+    <h4>Todo App - All right Reserved &copy;2023</h4>
+  </footer>
 </template>
 
 <style scoped>
