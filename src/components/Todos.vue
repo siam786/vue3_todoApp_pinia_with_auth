@@ -7,6 +7,8 @@
   
   function insertInputData(){
       store.addProject(inputData)
+      inputData.value = ''
+   
   }
 
   onMounted(()=>{
@@ -16,43 +18,43 @@
 </script>
 
 <template>
-    <div class="w-full h-screen flex items-center justify-center bg-blue-500 font-sans">
-      <div class="bg-white rounded shadow p-6 m-4 w-full lg:w-3/4 lg:max-w-lg">
+    <div class="flex items-center justify-center w-full h-screen font-sans bg-blue-500">
+      <div class="w-full p-6 m-4 rounded shadow bg-gradient-to-r from-blue-200 to-cyan-200 lg:w-4/4 lg:max-w-lg">
         <div class="mb-4">
-          <h1 class="text-4xl text-red">Todo App</h1>
+          <h1 class="text-4xl text-red-500">Todo App</h1>
           <div class="flex mt-4">
-            <input v-model="inputData" class="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+            <input v-model="inputData" class="w-full px-3 py-2 mr-4 border rounded shadow appearance-none text-grey-darker"
               placeholder="Add Todo">
             <button @click="insertInputData()"
-              class="flex-no-shrink p-2 border-2 rounded text-teal border-teal hover:text-white hover:bg-teal">Add</button>
+              class="p-2 border-2 rounded flex-no-shrink text-teal border-red hover:text-white hover:bg-red-500">Add</button>
           </div>
         </div>
         <div>
 
           
-           <div class="flex mb-4 items-center" v-for="(project, index) in store.inCompleteProject" :key="index">
+           <div class="flex items-center mb-4" v-for="(project, index) in store.inCompleteProject" :key="index">
             <p class="w-full text-grey-darkest">{{ project.name }}</p>
             <button
-             @click="store.doneAsComplete(project.id)" type="button" class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-green border-green hover:bg-green">Done</button>
+             @click="store.doneAsComplete(project.id)" type="button" class="p-2 ml-4 mr-2 border-2 rounded flex-no-shrink hover:text-white text-green border-green hover:bg-blue-500">Done</button>
             <button type="button" @click="store.deleteProject(project.id)"
-              class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+              class="p-2 ml-2 border-2 rounded flex-no-shrink text-red border-red hover:text-white hover:bg-blue-500">Remove</button>
           </div>
           
           <br><br>
           
-          <div class="flex mb-4 items-center" v-for="(project, index) in store.completeProject" :key="index">
-            <p class="w-full line-through text-green">{{ project.name }}</p>
+          <div class="flex items-center mb-4" v-for="(project, index) in store.completeProject" :key="index">
+            <p class="w-full text-red-500 line-through">{{ project.name }}</p>
             <button
-            @click="store.doneAsInComplete(project.id)" type="button" class="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-white text-grey border-grey hover:bg-grey">Not
+            @click="store.doneAsInComplete(project.id)" type="button" class="p-2 ml-4 mr-2 border-2 rounded flex-no-shrink hover:text-white text-grey border-grey hover:bg-grey">Not
               Done</button>
             <button type="button" @click="store.deleteProject(project.id)"
-              class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-white hover:bg-red">Remove</button>
+              class="p-2 ml-2 border-2 rounded-ml flex-no-shrink text-red border-red hover:text-white hover:bg-blue-500">Remove</button>
           </div>
 
         </div>
       </div>
     </div>
-    <footer class="bg-blue-700 text-center py-4 text-white">
+    <footer class="py-4 text-center text-white bg-blue-700">
     <h4>Todo App - All right Reserved &copy;2023</h4>
   </footer>
 </template>
