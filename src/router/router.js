@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "../store/loginRegister";
 import HomeComponent from '../components/Home.vue';
+import Dashboard from '../components/Dashboard.vue';
 import LoginComponent from '../components/Login.vue';
 import RegisterComponent from '../components/Register.vue';
 import TodosComponent from '../components/Todos.vue';
@@ -10,6 +11,14 @@ const routes = [
         path : '/',
         name : 'Home',
         component : HomeComponent
+    },
+    {
+        path : '/dashboard',
+        name : 'Dashboard',
+        component : Dashboard,
+        meta : {
+            isAuthenticate : true
+        }
     },
 
     {

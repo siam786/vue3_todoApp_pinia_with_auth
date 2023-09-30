@@ -1,6 +1,7 @@
 <script setup>
 import store from "../store/loginRegister";
 const state = store();
+
 </script>
 
 <template>
@@ -41,6 +42,12 @@ const state = store();
         >
           Home
         </router-link>
+        <router-link
+          to="/dashboard"
+          class="block mt-4 mr-4 text-lg font-semibold text-white lg:inline-block lg:mt-0 hover:text-white"
+        >
+          Dashboard
+        </router-link>
 
         <router-link
           :to="{ name: 'Todos' }"
@@ -59,9 +66,16 @@ const state = store();
         <router-link
           v-if="!state.isAuthenticate"
           :to="{ name: 'Login' }"
-          class="block mt-4 mr-4 text-lg font-semibold text-teal-200 lg:inline-block lg:mt-0 hover:text-white"
+          class="block mt-4 mr-4 text-lg font-semibold text-white lg:inline-block lg:mt-0 hover:text-white"
         >
           Login
+        </router-link>
+        <router-link
+          v-if="!state.isAuthenticate"
+          :to="{ name: 'Register' }"
+          class="block mt-4 mr-4 text-lg font-semibold text-white lg:inline-block lg:mt-0 hover:text-white"
+        >
+          Register
         </router-link>
       </div>
       <div>

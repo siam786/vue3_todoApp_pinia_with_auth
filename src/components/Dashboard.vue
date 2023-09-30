@@ -1,10 +1,12 @@
 <script setup>
 import store from "../store/loginRegister";
 const state = store();
+
+//onsole.log(state.userInfo);
 </script>
 
 <template>
-  <div class="w-full h-screen bg-gradient-to-r from-gray-400 via-gray-600 to-blue-800">
+  <div class="bg-white">
     <div class="relative px-6 pt-14 lg:px-8">
       <div
         class="absolute inset-x-0 overflow-hidden -top-40 -z-10 transform-gpu blur-3xl sm:-top-80"
@@ -38,10 +40,14 @@ const state = store();
         <div class="hidden sm:mb-8 sm:flex sm:justify-center"></div>
         <div class="text-center">
           <h1
-            class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
           >
-            Welcome Todo App 
+            Welcome
           </h1>
+          <p class="mt-6 text-lg font-medium leading-8 text-red-600">
+            Mr. {{ state.userInfo?.name}}
+          </p>
+
           
           <div class="flex items-center justify-center mt-10 gap-x-6">
             <router-link
