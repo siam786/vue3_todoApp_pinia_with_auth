@@ -10,5 +10,5 @@ This simple vue3 Todo App with pinia state management and add authentication.
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/WFL0FZ4/todo-app.jpg)
+![alt text](https://i.ibb.co/WFL0FZ4/todo-app.jpg)
 
